@@ -110,6 +110,7 @@ aside {
   border-radius: 5rem;
   margin-top: auto;
   margin-bottom: auto;
+  padding: 1rem;
 }
 
 .nav-aside-links {
@@ -474,7 +475,7 @@ footer {
   }
 }
 
-@media only screen and (max-width: 768px) and (orientation: portrait) {
+@media only screen and (max-device-width: 768px) and (orientation: portrait) {
   html {
     font-size: 2vw;
   }
@@ -485,6 +486,7 @@ footer {
 
   #nav-aside-button {
     display: block;
+    padding: 0;
   }
 
   aside {
@@ -522,7 +524,7 @@ footer {
   }
 }
 
-@media only screen and (max-width: 480px) and (orientation: portrait) {
+@media only screen and (max-device-width: 480px) and (orientation: portrait) {
   #nav-aside-container {
     width: 100%;
   }

@@ -49,6 +49,7 @@ const utils = {
         Array.from(fontEffect)[2].style.transform = `translateX(-${scrollY}px)`;
         detectionTarget.style.animationPlayState = "running";
       }
+      // The code needs to be modified so that the animation will trigger when the bottom of the screen reaches the top of the content.
       if (!changeTarget.isFadeInOnce.about && order === 1) {
         // main > <section #about>
         const profileTexts = Array.from(detectionTarget.querySelectorAll(".profile-text > p"));

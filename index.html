@@ -1,347 +1,311 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="author" content="Yunseok Jang" />
-    <meta
-      name="description"
-      content="This is my personal introduction page, meticulously built with pure HTML, CSS, and JavaScript without the use of any libraries."
-    />
-    <meta name="keywords" content="Self Introduction, HTML, CSS, JavaScript" />
-    <link rel="stylesheet" href="style.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;700&display=swap"
-      rel="stylesheet"
-    />
-    <script type="module" src="Index.js" defer></script>
-    <script src="Components/Accordion.js" defer></script>
-    <title>YunseokJang's Self-Introduction</title>
-  </head>
 
-  <body>
-    <div id="loading-screen">
-      <span class="loader"></span>
-    </div>
-    <aside id="nav-aside">
-      <nav>
-        <ul class="nav-links">
-          <li class="link active">
-            <a href="#home" aria-label="Home Icon" draggable="false">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
-                <path
-                  class="link-icon active"
-                  d="M240-200h120v-240h240v240h120v-360L480-740 240-560v360Zm-80 80v-480l320-240 320 240v480H520v-240h-80v240H160Zm320-350Z"
-                />
-              </svg>
-            </a>
-            <span class="icon-text">Home</span>
-          </li>
-          <li class="link">
-            <a href="#about" aria-label="About Icon" draggable="false">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
-                <path
-                  class="link-icon"
-                  d="M480-480q-66 0-113-47t-47-113q0-66 47-113t113-47q66 0 113 47t47 113q0 66-47 113t-113 47ZM160-160v-112q0-34 17.5-62.5T224-378q62-31 126-46.5T480-440q66 0 130 15.5T736-378q29 15 46.5 43.5T800-272v112H160Zm80-80h480v-32q0-11-5.5-20T700-306q-54-27-109-40.5T480-360q-56 0-111 13.5T260-306q-9 5-14.5 14t-5.5 20v32Zm240-320q33 0 56.5-23.5T560-640q0-33-23.5-56.5T480-720q-33 0-56.5 23.5T400-640q0 33 23.5 56.5T480-560Zm0-80Zm0 400Z"
-                />
-              </svg>
-            </a>
-            <span class="icon-text">About</span>
-          </li>
-          <li class="link">
-            <a href="#experience" aria-label="Experience Icon" draggable="false">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
-                <path
-                  class="link-icon"
-                  d="M160-120q-33 0-56.5-23.5T80-200v-440q0-33 23.5-56.5T160-720h160v-80q0-33 23.5-56.5T400-880h160q33 0 56.5 23.5T640-800v80h160q33 0 56.5 23.5T880-640v440q0 33-23.5 56.5T800-120H160Zm0-80h640v-440H160v440Zm240-520h160v-80H400v80ZM160-200v-440 440Z"
-                />
-              </svg>
-            </a>
-            <span class="icon-text">Experience</span>
-          </li>
-          <li class="link">
-            <a href="#projects" aria-label="Projects Icon" draggable="false">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
-                <path
-                  class="link-icon"
-                  d="M80-120q-17 0-28.5-11.5T40-160q0-17 11.5-28.5T80-200h800q17 0 28.5 11.5T920-160q0 17-11.5 28.5T880-120H80Zm80-120q-33 0-56.5-23.5T80-320v-440q0-33 23.5-56.5T160-840h640q33 0 56.5 23.5T880-760v440q0 33-23.5 56.5T800-240H160Zm0-80h640v-440H160v440Zm0 0v-440 440Z"
-                />
-              </svg>
-            </a>
-            <span class="icon-text">Projects</span>
-          </li>
-          <li class="link">
-            <a href="#contact" aria-label="Contact Icon" draggable="false">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
-                <path
-                  class="link-icon"
-                  d="M760-480q0-117-81.5-198.5T480-760v-80q75 0 140.5 28.5t114 77q48.5 48.5 77 114T840-480h-80Zm-160 0q0-50-35-85t-85-35v-80q83 0 141.5 58.5T680-480h-80Zm198 360q-125 0-247-54.5T329-329Q229-429 174.5-551T120-798q0-18 12-30t30-12h162q14 0 25 9.5t13 22.5l26 140q2 16-1 27t-11 19l-97 98q20 37 47.5 71.5T387-386q31 31 65 57.5t72 48.5l94-94q9-9 23.5-13.5T670-390l138 28q14 4 23 14.5t9 23.5v162q0 18-12 30t-30 12ZM241-600l66-66-17-94h-89q5 41 14 81t26 79Zm358 358q39 17 79.5 27t81.5 13v-88l-94-19-67 67ZM241-600Zm358 358Z"
-                />
-              </svg>
-            </a>
-            <span class="icon-text">Contact</span>
-          </li>
-        </ul>
-      </nav>
-    </aside>
-    <header>Responsive Design Coming Soon</header>
-    <main>
-      <section id="home">
-        <div class="content-container">
-          <p class="intro-text">Nice to Meet You!</p>
-          <p class="intro-text"></p>
-          <p class="intro-text"></p>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="author" content="Yunseok Jang" />
+  <meta name="description"
+    content="This is my personal introduction page, meticulously built with pure HTML, CSS, and JavaScript without the use of any libraries." />
+  <meta name="keywords" content="Self Introduction, HTML, CSS, JavaScript" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;700&display=swap" rel="stylesheet" />
+  <script type="module" src="Index.js" defer></script>
+  <script src="Components/Accordion.js" defer></script>
+  <title>YunseokJang's Self-Introduction</title>
+</head>
+
+<body>
+  <div id="loading-screen">
+    <span class="loader"></span>
+  </div>
+  <aside id="nav-aside">
+    <button type="menu" id="nav-aside-button">
+      <div class="nav-button-bar1"></div>
+      <div class="nav-button-bar2"></div>
+      <div class="nav-button-bar3"></div>
+    </button>
+    <nav id="nav-aside-container">
+      <ul class="nav-aside-links">
+        <li class="link active">
+          <a href="#home" aria-label="Home Icon" draggable="false">
+            <span class="link-text">Home</span>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
+              <path class="link-icon active"
+                d="M240-200h120v-240h240v240h120v-360L480-740 240-560v360Zm-80 80v-480l320-240 320 240v480H520v-240h-80v240H160Zm320-350Z" />
+            </svg>
+          </a>
+          <span class="icon-text">Home</span>
+        </li>
+        <li class="link">
+          <a href="#about" aria-label="About Icon" draggable="false">
+            <span class="link-text">About</span>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
+              <path class="link-icon"
+                d="M480-480q-66 0-113-47t-47-113q0-66 47-113t113-47q66 0 113 47t47 113q0 66-47 113t-113 47ZM160-160v-112q0-34 17.5-62.5T224-378q62-31 126-46.5T480-440q66 0 130 15.5T736-378q29 15 46.5 43.5T800-272v112H160Zm80-80h480v-32q0-11-5.5-20T700-306q-54-27-109-40.5T480-360q-56 0-111 13.5T260-306q-9 5-14.5 14t-5.5 20v32Zm240-320q33 0 56.5-23.5T560-640q0-33-23.5-56.5T480-720q-33 0-56.5 23.5T400-640q0 33 23.5 56.5T480-560Zm0-80Zm0 400Z" />
+            </svg>
+          </a>
+          <span class="icon-text">About</span>
+        </li>
+        <li class="link">
+          <a href="#experience" aria-label="Experience Icon" draggable="false">
+            <span class="link-text">Experience</span>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
+              <path class="link-icon"
+                d="M160-120q-33 0-56.5-23.5T80-200v-440q0-33 23.5-56.5T160-720h160v-80q0-33 23.5-56.5T400-880h160q33 0 56.5 23.5T640-800v80h160q33 0 56.5 23.5T880-640v440q0 33-23.5 56.5T800-120H160Zm0-80h640v-440H160v440Zm240-520h160v-80H400v80ZM160-200v-440 440Z" />
+            </svg>
+          </a>
+          <span class="icon-text">Experience</span>
+        </li>
+        <li class="link">
+          <a href="#projects" aria-label="Projects Icon" draggable="false">
+            <span class="link-text">Projects</span>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
+              <path class="link-icon"
+                d="M80-120q-17 0-28.5-11.5T40-160q0-17 11.5-28.5T80-200h800q17 0 28.5 11.5T920-160q0 17-11.5 28.5T880-120H80Zm80-120q-33 0-56.5-23.5T80-320v-440q0-33 23.5-56.5T160-840h640q33 0 56.5 23.5T880-760v440q0 33-23.5 56.5T800-240H160Zm0-80h640v-440H160v440Zm0 0v-440 440Z" />
+            </svg>
+          </a>
+          <span class="icon-text">Projects</span>
+        </li>
+        <li class="link">
+          <a href="#contact" aria-label="Contact Icon" draggable="false">
+            <span class="link-text">Contact</span>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
+              <path class="link-icon"
+                d="M760-480q0-117-81.5-198.5T480-760v-80q75 0 140.5 28.5t114 77q48.5 48.5 77 114T840-480h-80Zm-160 0q0-50-35-85t-85-35v-80q83 0 141.5 58.5T680-480h-80Zm198 360q-125 0-247-54.5T329-329Q229-429 174.5-551T120-798q0-18 12-30t30-12h162q14 0 25 9.5t13 22.5l26 140q2 16-1 27t-11 19l-97 98q20 37 47.5 71.5T387-386q31 31 65 57.5t72 48.5l94-94q9-9 23.5-13.5T670-390l138 28q14 4 23 14.5t9 23.5v162q0 18-12 30t-30 12ZM241-600l66-66-17-94h-89q5 41 14 81t26 79Zm358 358q39 17 79.5 27t81.5 13v-88l-94-19-67 67ZM241-600Zm358 358Z" />
+            </svg>
+          </a>
+          <span class="icon-text">Contact</span>
+        </li>
+      </ul>
+    </nav>
+  </aside>
+  <header>
+  </header>
+  <main>
+    <section id="home">
+      <div class="content-container">
+        <p class="intro-text">Nice to Meet You!</p>
+        <p class="intro-text"></p>
+        <p class="intro-text"></p>
+      </div>
+    </section>
+    <section id="about">
+      <h2>About Me<span>Attention to Details</span></h2>
+      <article>
+        <div class="about-profile">
+          <img src="./asset/profile-photo.png" class="profile-photo" alt="My Profile Photo" draggable="false" />
+          <div class="profile-text">
+            <p>
+              I became deeply fascinated with software after initially engaging with tools like
+              AutoCAD, CATIA, for my mechanical design studies.
+            </p>
+            <p>
+              This initial encounter sparked a profound interest, leading me to delve more into
+              the intricate world of software engineering.
+            </p>
+            <p>
+              <strong>STUDY HARD, BE PATIENT, STEP BY STEP</strong>
+            </p>
+          </div>
         </div>
-      </section>
-      <section id="about">
-        <h2>About Me<span>Attention to Details</span></h2>
-        <article>
-          <div class="about-profile">
-            <img
-              src="./asset/profile-photo.png"
-              class="profile-photo"
-              alt="My Profile Photo"
-              draggable="false"
-            />
-            <div class="profile-text">
+        <div class="about-category">
+          <div class="tablink-container">
+            <button name="education" class="tablink" type="button">Education</button>
+            <button name="skills" class="tablink" type="button">Skills</button>
+          </div>
+          <div class="tabcontent-container">
+            <div name="education" class="tabcontent education">
+              <h3 class="tabcontent-title">
+                Kyungnam University<span>Bachelor's Degree, Fourth Year</span>
+              </h3>
+              <div class="tabcontent-content">
+                <p>
+                  <span> A Senior Majoring in Materials Science and Engineering </span>
+                  <br />
+                  <span> Location - Changwon-si, Gyeongsangnam-do, Republic of Korea </span>
+                  <br />
+                  <span> Mar. 2012 - Aug. 2018 </span>
+                </p>
+                <img src="asset/university-logo1.svg" class="logo" alt="university logo" draggable="false" />
+              </div>
+              <h3 class="tabcontent-title">Jinhae High School<span>Diploma</span></h3>
+              <div class="tabcontent-content">
+                <p>
+                  <span> Natural Sciences and Engineering track </span>
+                  <br />
+                  <span> Location - Changwon-si, Gyeongsangnam-do, Republic of Korea </span>
+                  <br />
+                  <span> Mar. 2009 - Feb. 2012 </span>
+                </p>
+                <img src="asset/highschool-logo.png" class="logo" alt="highschool logo" draggable="false" />
+              </div>
+            </div>
+            <div name="skills" class="tabcontent skills">
+              <img class="logo" src="asset/c-logo.svg" title="C" draggable="false" />
+              <img class="logo" src="asset/cpp-logo.svg" title="C++" draggable="false" />
+              <img class="logo" src="asset/html-logo.svg" title="HTML" draggable="false" />
+              <img class="logo" src="asset/css-logo.svg" title="CSS" draggable="false" />
+              <img class="logo" src="asset/javascript-logo.svg" title="JAVASCRIPT" draggable="false" />
+              <img class="logo" src="asset/react-logo.svg" title="REACT" draggable="false" />
+              <img class="logo" src="asset/redux-logo.svg" title="REDUX" draggable="false" />
+              <img class="logo" src="asset/nodejs-logo.svg" title="NODE" draggable="false" />
+              <img class="logo" src="asset/postgresql-logo.svg" title="POSTGRESQL" draggable="false" />
+              <img class="logo" src="asset/dbeaver-logo.svg" title="DBEAVER" draggable="false" />
+              <img class="logo" src="asset/python-logo.svg" title="PYTHON" draggable="false" />
+              <img class="logo" src="asset/django-logo.svg" title="DJANGO" draggable="false" />
+            </div>
+          </div>
+        </div>
+      </article>
+    </section>
+    <section id="experience">
+      <h2>Experience</h2>
+      <article>
+        <accordion-component data-accordion-title="Canadian Working Holiday">
+          <table class="experience-details">
+            <tr>
+              <th>Period</th>
+              <td>Jul. 2023 ~ Present</td>
+            </tr>
+          </table>
+          <div class="experience-task">
+            <p>
+              Seeking to break out of my comfort zone and not settle for the status quo, I applied
+              for the Canadian Working Holiday program while working at my company. This decision
+              was driven by my desire for greater challenges and more diverse experiences.
+            </p>
+            <p>
+              Additionally, it was fueled by the prospect of enhanced learning opportunities. Upon
+              being accepted, I embraced this path of growth and exploration. I voluntarily
+              resigned from my job to study English and embark on this bold new adventure.
+            </p>
+          </div>
+        </accordion-component>
+        <accordion-component data-accordion-title="Korens Global">
+          <table class="experience-details">
+            <tr>
+              <th>Period</th>
+              <td>Nov. 2021 - Jun 2023 · 1 yr 8 mos</td>
+            </tr>
+            <tr>
+              <th>Employment Type</th>
+              <td>Full-time</td>
+            </tr>
+            <tr>
+              <th>Department</th>
+              <td>Software Technology Research Department</td>
+            </tr>
+            <tr>
+              <th>Position</th>
+              <td>Full Stack Engineer</td>
+            </tr>
+          </table>
+          <div class="experience-task">
+            <div>
+              <h3>
+                <strong>Pinat</strong>
+                <span>
+                  Development of Web application service for HR management (B2B Service)
+                </span>
+              </h3>
               <p>
-                I became deeply fascinated with software after initially engaging with tools like
-                AutoCAD, CATIA, for my mechanical design studies.
+                In the Pinat project, I primarily worked on front-end development using React,
+                focusing on creating filters, dashboards, and maps utilizing both Google Maps API
+                and Kakao Maps API.
               </p>
+            </div>
+            <div>
+              <h3>
+                <strong>Value Chain</strong>
+                <span>
+                  Development of Web application for Messenger-based portal and subcontractor
+                  management (National Project)
+                </span>
+              </h3>
               <p>
-                This initial encounter sparked a profound interest, leading me to delve more into
-                the intricate world of software engineering.
+                In the CCP project, I worked on both front-end and back-end development using
+                React, Koa.js, and PostgreSQL.
               </p>
+            </div>
+            <div>
+              <h3>
+                <strong>Teamply</strong>
+                <span>
+                  Development of Web application for project management (National Project)
+                </span>
+              </h3>
               <p>
-                <strong>STUDY HARD, BE PATIENT, STEP BY STEP</strong>
+                In the Teamply project, I primarily worked on developing APIs using Django and
+                PostgreSQL.
               </p>
             </div>
           </div>
-          <div class="about-category">
-            <div class="tablink-container">
-              <button name="education" class="tablink" type="button">Education</button>
-              <button name="skills" class="tablink" type="button">Skills</button>
-            </div>
-            <div class="tabcontent-container">
-              <div name="education" class="tabcontent education">
-                <h3 class="tabcontent-title">
-                  Kyungnam University<span>Bachelor's Degree, Fourth Year</span>
-                </h3>
-                <div class="tabcontent-content">
-                  <p>
-                    <span> A Senior Majoring in Materials Science and Engineering </span>
-                    <br />
-                    <span> Location - Changwon-si, Gyeongsangnam-do, Republic of Korea </span>
-                    <br />
-                    <span> Mar. 2012 - Aug. 2018 </span>
-                  </p>
-                  <img
-                    src="asset/university-logo1.svg"
-                    class="logo"
-                    alt="university logo"
-                    draggable="false"
-                  />
-                </div>
-                <h3 class="tabcontent-title">Jinhae High School<span>Diploma</span></h3>
-                <div class="tabcontent-content">
-                  <p>
-                    <span> Natural Sciences and Engineering track </span>
-                    <br />
-                    <span> Location - Changwon-si, Gyeongsangnam-do, Republic of Korea </span>
-                    <br />
-                    <span> Mar. 2009 - Feb. 2012 </span>
-                  </p>
-                  <img
-                    src="asset/highschool-logo.png"
-                    class="logo"
-                    alt="highschool logo"
-                    draggable="false"
-                  />
-                </div>
-              </div>
-              <div name="skills" class="tabcontent skills">
-                <img class="logo" src="asset/c-logo.svg" title="C" draggable="false" />
-                <img class="logo" src="asset/cpp-logo.svg" title="C++" draggable="false" />
-                <img class="logo" src="asset/html-logo.svg" title="HTML" draggable="false" />
-                <img class="logo" src="asset/css-logo.svg" title="CSS" draggable="false" />
-                <img
-                  class="logo"
-                  src="asset/javascript-logo.svg"
-                  title="JAVASCRIPT"
-                  draggable="false"
-                />
-                <img class="logo" src="asset/react-logo.svg" title="REACT" draggable="false" />
-                <img class="logo" src="asset/redux-logo.svg" title="REDUX" draggable="false" />
-                <img class="logo" src="asset/nodejs-logo.svg" title="NODE" draggable="false" />
-                <img
-                  class="logo"
-                  src="asset/postgresql-logo.svg"
-                  title="POSTGRESQL"
-                  draggable="false"
-                />
-                <img class="logo" src="asset/dbeaver-logo.svg" title="DBEAVER" draggable="false" />
-                <img class="logo" src="asset/python-logo.svg" title="PYTHON" draggable="false" />
-                <img class="logo" src="asset/django-logo.svg" title="DJANGO" draggable="false" />
-              </div>
-            </div>
+        </accordion-component>
+        <accordion-component data-accordion-title="Military Service">
+          <table class="experience-details">
+            <tr>
+              <th>Period</th>
+              <td>Dec. 2013 ~ Sep. 2015 · 1 yr 9 mos</td>
+            </tr>
+            <tr>
+              <th>Service Status</th>
+              <td>Completed Mandatory Military Service</td>
+            </tr>
+            <tr>
+              <th>Rank</th>
+              <td>Sergeant</td>
+            </tr>
+            <tr>
+              <th>Role</th>
+              <td>Infantryman</td>
+            </tr>
+          </table>
+          <div class="experience-task">
+            <p>Served and Discharged from the ROK Army as an Infantryman.</p>
+            <p>
+              During my military service, I cultivated a strong sense of resdivonsibility,
+              teamwork, leadership, and resilience.
+            </p>
           </div>
-        </article>
-      </section>
-      <section id="experience">
-        <h2>Experience</h2>
-        <article>
-          <accordion-component data-accordion-title="Canadian Working Holiday">
-            <table class="experience-details">
-              <tr>
-                <th>Period</th>
-                <td>Jul. 2023 ~ Present</td>
-              </tr>
-            </table>
-            <div class="experience-task">
-              <p>
-                Seeking to break out of my comfort zone and not settle for the status quo, I applied
-                for the Canadian Working Holiday program while working at my company. This decision
-                was driven by my desire for greater challenges and more diverse experiences.
-              </p>
-              <p>
-                Additionally, it was fueled by the prospect of enhanced learning opportunities. Upon
-                being accepted, I embraced this path of growth and exploration. I voluntarily
-                resigned from my job to study English and embark on this bold new adventure.
-              </p>
-            </div>
-          </accordion-component>
-          <accordion-component data-accordion-title="Korens Global">
-            <table class="experience-details">
-              <tr>
-                <th>Period</th>
-                <td>Nov. 2021 - Jun 2023 · 1 yr 8 mos</td>
-              </tr>
-              <tr>
-                <th>Employment Type</th>
-                <td>Full-time</td>
-              </tr>
-              <tr>
-                <th>Department</th>
-                <td>Software Technology Research Department</td>
-              </tr>
-              <tr>
-                <th>Position</th>
-                <td>Full Stack Engineer</td>
-              </tr>
-            </table>
-            <div class="experience-task">
-              <div>
-                <h3>
-                  <strong>Pinat</strong>
-                  <span>
-                    Development of Web application service for HR management (B2B Service)
-                  </span>
-                </h3>
-                <p>
-                  In the Pinat project, I primarily worked on front-end development using React,
-                  focusing on creating filters, dashboards, and maps utilizing both Google Maps API
-                  and Kakao Maps API.
-                </p>
-              </div>
-              <div>
-                <h3>
-                  <strong>CCP</strong>
-                  <span>
-                    Development of Web application for Messenger-based portal and subcontractor
-                    management (National Project)
-                  </span>
-                </h3>
-                <p>
-                  In the CCP project, I worked on both front-end and back-end development using
-                  React, Koa.js, and PostgreSQL.
-                </p>
-              </div>
-              <div>
-                <h3>
-                  <strong>Teamply</strong>
-                  <span>
-                    Development of Web application for project management (National Project)
-                  </span>
-                </h3>
-                <p>
-                  In the Teamply project, I primarily worked on developing APIs using Django and
-                  PostgreSQL.
-                </p>
-              </div>
-            </div>
-          </accordion-component>
-          <accordion-component data-accordion-title="Military Service">
-            <table class="experience-details">
-              <tr>
-                <th>Period</th>
-                <td>Dec. 2013 ~ Sep. 2015 · 1 yr 9 mos</td>
-              </tr>
-              <tr>
-                <th>Service Status</th>
-                <td>Completed Mandatory Military Service</td>
-              </tr>
-              <tr>
-                <th>Rank</th>
-                <td>Sergeant</td>
-              </tr>
-              <tr>
-                <th>Role</th>
-                <td>Infantryman</td>
-              </tr>
-            </table>
-            <div class="experience-task">
-              <p>Served and Discharged from the ROK Army as an Infantryman.</p>
-              <p>
-                During my military service, I cultivated a strong sense of resdivonsibility,
-                teamwork, leadership, and resilience.
-              </p>
-            </div>
-          </accordion-component>
-        </article>
-      </section>
-      <section id="projects">
-        <h2>Projects</h2>
-        <article>
-          <div class="projects-text"></div>
-        </article>
-      </section>
-      <section id="contact">
-        <h2>Contact</h2>
-        <article>
-          <nav>
-            <ul>
-              <li>
-                - E-mail -
-                <br />
-                <a href="mailto:dbstjr3805@gmail.com" aria-label="Email Link" draggable="false">
-                  <img class="logo" src="asset/gmail-logo.svg" title="Email" draggable="false" />
-                </a>
-              </li>
-              <li>
-                - Linkedin -
-                <br />
-                <a
-                  href="https://www.linkedin.com/in/yunseok-jang-4a9bb718a"
-                  aria-label="Linkedin Link"
-                  draggable="false"
-                >
-                  <img
-                    class="logo"
-                    src="asset/linkedin-logo.svg"
-                    title="Linkedin"
-                    draggable="false"
-                  />
-                </a>
-              </li>
-            </ul>
-          </nav>
-        </article>
-      </section>
-    </main>
-    <footer>
-      <p>Made by Yunseok Jang</p>
-    </footer>
-  </body>
+        </accordion-component>
+      </article>
+    </section>
+    <section id="projects">
+      <h2>Projects</h2>
+      <article>
+        <div class="projects-text"></div>
+      </article>
+    </section>
+    <section id="contact">
+      <h2>Contact</h2>
+      <article>
+        <nav>
+          <ul>
+            <li>
+              - E-mail -
+              <br />
+              <a href="mailto:dbstjr3805@gmail.com" aria-label="Email Link" draggable="false">
+                <img class="logo" src="asset/gmail-logo.svg" title="Email" draggable="false" />
+              </a>
+            </li>
+            <li>
+              - Linkedin -
+              <br />
+              <a href="https://www.linkedin.com/in/yunseok-jang-4a9bb718a" aria-label="Linkedin Link" draggable="false">
+                <img class="logo" src="asset/linkedin-logo.svg" title="Linkedin" draggable="false" />
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </article>
+    </section>
+  </main>
+  <footer>
+    <p>Made by Yunseok Jang</p>
+  </footer>
+</body>
+
 </html>

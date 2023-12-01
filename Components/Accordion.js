@@ -23,9 +23,9 @@ sharedStyles.replaceSync(
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    font-size: 2vw;
-    padding: 1vw;
-    border-radius: 1vw;
+    font-size: 2rem;
+    padding: 1rem;
+    border-radius: 1rem;
     background-color: var(--neutral-color);
     box-shadow: 0 7px var(--secondary-color);
     transition: all var(--accordion-animation-delay) ease-in-out;
@@ -34,17 +34,17 @@ sharedStyles.replaceSync(
     filter: brightness(1.2);
   }
   .accordion > button > svg {
-    width: 3vw;
-    height: 3vw;
+    width: 3rem;
+    height: 3rem;
   }
   .accordion > button > svg > path {
     fill: var(--font-color);
   }
   .accordion > .accordion-panel {
     background-color: var(--primary-color);
-    padding: 0 1vw;
-    margin: 1vw;
-    border-radius: 1vw;
+    padding: 0 1rem;
+    margin: 1rem;
+    border-radius: 1rem;
     max-height: 0;
     overflow: hidden;
     box-sizing: border-box;
@@ -56,7 +56,7 @@ sharedStyles.replaceSync(
   }
   .accordion.active > .accordion-panel {
     max-height: auto;
-    padding: 1vw 1vw;
+    padding: 1rem 1rem;
   }
 
   @keyframes accordion-active-arrow {

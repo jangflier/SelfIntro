@@ -11,9 +11,9 @@ utils.checkTheme(mediaQueryList);
 /* load effects */
 const html = document.getElementsByTagName("html")[0];
 const loadingScreen = document.getElementById("loading-screen");
-const aside = document.getElementById("nav-aside");
+const aside = document.getElementsByTagName("aside")[0];
 const introText = document.getElementsByClassName("intro-text");
-window.addEventListener("load", async function () {
+window.onload = async function () {
   let performanceData = performance.getEntriesByType("navigation")[0];
   let loadTime = performanceData.loadEventEnd - performanceData.startTime;
   // Wait for 1 second if the loading time is less than 1 second
@@ -59,7 +59,7 @@ window.addEventListener("load", async function () {
     });
     projectsTextElement.appendChild(divEl);
   }
-});
+};
 /* --- */
 
 /* scroll effects */
@@ -128,5 +128,24 @@ tablinks.forEach((elTablink) => {
       });
     }
   });
+});
+
+const navSideButton = document.getElementById("nav-aside-button");
+window.addEventListener("click", (e) => {
+  if (
+    !aside.querySelector("#nav-aside-container").contains(e.target) &&
+    !aside.querySelector("#nav-aside-button").contains(e.target)
+  ) {
+    navSideButton.classList.remove("active");
+    aside.style.width = "0";
+  }
+});
+navSideButton.addEventListener("click", (e) => {
+  if (navSideButton.classList.contains("active")) {
+    aside.style.width = "0";
+  } else {
+    aside.style.width = "100%";
+  }
+  navSideButton.classList.toggle("active");
 });
 /* --- */

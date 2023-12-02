@@ -102,8 +102,8 @@ aside {
 
 #nav-aside-container {
   background: var(--aside-color);
-  -webkit-backdrop-filter: blur(3px);
-  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(5px);
+  backdrop-filter: blur(5px);
 }
 
 #nav-aside-container {

@@ -82,7 +82,6 @@ window.addEventListener("scroll", function () {
         tablinks: { tablinks, tabcontents },
         isFadeInOnce,
       },
-      window.scrollY,
       order
     );
   });

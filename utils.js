@@ -30,14 +30,23 @@ const utils = {
       currentElement.innerHTML += t;
     }
   },
-  toggleActiveState(detectionTarget = {}, changeTarget = {}, scrollY = 0, order = 0) {
-    const offsetThreshold = window.innerHeight * constants.OFFSET_PERCENTAGE20;
-    const sectionTop = detectionTarget.offsetTop;
-    const sectionHeight = detectionTarget.offsetHeight;
+  checkScrollOffsetReached(target, scrollY, offestPercenTage) {
+    const offsetThreshold = window.innerHeight * offestPercenTage;
+    const sectionTop = target.offsetTop;
+    const sectionHeight = target.offsetHeight;
 
-    const isActive =
+    return (
       scrollY >= sectionTop - offsetThreshold &&
-      scrollY < sectionTop + sectionHeight - offsetThreshold;
+      scrollY < sectionTop + sectionHeight - offsetThreshold
+    );
+  },
+  toggleActiveState(detectionTarget = {}, changeTarget = {}, order = 0) {
+    const scrollY = window.scrollY;
+    const isActive = this.checkScrollOffsetReached(
+      detectionTarget,
+      scrollY,
+      constants.OFFSET_PERCENTAGE20
+    );
 
     changeTarget.asideLinks[order].classList.toggle("active", isActive);
 
@@ -49,33 +58,43 @@ const utils = {
         Array.from(fontEffect)[2].style.transform = `translateX(-${scrollY}px)`;
         detectionTarget.style.animationPlayState = "running";
       }
-      // The code needs to be modified so that the animation will trigger when the bottom of the screen reaches the top of the content.
-      if (!changeTarget.isFadeInOnce.about && order === 1) {
-        // main > <section #about>
-        const profileTexts = Array.from(detectionTarget.querySelectorAll(".profile-text > p"));
-        const profilePhoto = detectionTarget.querySelector(".profile-photo");
-
-        profilePhoto.style.animation = `1s slideUp ease-in-out forwards`;
-        profileTexts.forEach((el, i) => {
-          el.style.animation = `1s slideRight ${i * 0.5}s ease-in-out forwards`;
-        });
-
-        const firstTab = 0;
-        changeTarget.tablinks.tablinks[firstTab].classList.add("active");
-        changeTarget.tablinks.tabcontents[firstTab].classList.add("active");
-        changeTarget.tablinks.tabcontents[firstTab].style.maxHeight =
-          changeTarget.tablinks.tabcontents[firstTab].scrollHeight + "px";
-        changeTarget.isFadeInOnce.about = true;
-      }
-      if (!changeTarget.isFadeInOnce.experience && order === 2) {
-        // main > <section #experience>
-        Array.from(detectionTarget.querySelectorAll("accordion-component")).forEach((el) => {
-          el.animateFadeIn();
-        });
-        changeTarget.isFadeInOnce.experience = true;
-      }
     } else {
       detectionTarget.style.animationPlayState = "paused";
+    }
+
+    const isEveryAnimationActive = !Object.values(changeTarget.isFadeInOnce).some(
+      (value) => value === false
+    );
+    if (
+      isEveryAnimationActive ||
+      !this.checkScrollOffsetReached(detectionTarget, scrollY, constants.OFFSET_PERCENTAGE70)
+    ) {
+      return;
+    }
+
+    if (!changeTarget.isFadeInOnce.about && order === 1) {
+      // main > <section #about>
+      const profileTexts = Array.from(detectionTarget.querySelectorAll(".profile-text > p"));
+      const profilePhoto = detectionTarget.querySelector(".profile-photo");
+
+      profilePhoto.style.animation = `1s slideUp ease-in-out forwards`;
+      profileTexts.forEach((el, i) => {
+        el.style.animation = `1s slideRight ${i * 0.5}s ease-in-out forwards`;
+      });
+
+      const firstTab = 0;
+      changeTarget.tablinks.tablinks[firstTab].classList.add("active");
+      changeTarget.tablinks.tabcontents[firstTab].classList.add("active");
+      changeTarget.tablinks.tabcontents[firstTab].style.maxHeight =
+        changeTarget.tablinks.tabcontents[firstTab].scrollHeight + "px";
+      changeTarget.isFadeInOnce.about = true;
+    }
+    if (!changeTarget.isFadeInOnce.experience && order === 2) {
+      // main > <section #experience>
+      Array.from(detectionTarget.querySelectorAll("accordion-component")).forEach((el) => {
+        el.animateFadeIn();
+      });
+      changeTarget.isFadeInOnce.experience = true;
     }
   },
 };

@@ -105,6 +105,11 @@ aside {
   -webkit-backdrop-filter: blur(5px);
   backdrop-filter: blur(5px);
 }
+@supports not ((backdrop-filter: blur(5px)) or (-webkit-backdrop-filter: blur(5px))) {
+  #nav-aside-container {
+    background: var(--aside-color);
+  }
+}
 
 #nav-aside-container {
   border-radius: 5rem;

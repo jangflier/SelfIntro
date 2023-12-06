@@ -42,7 +42,6 @@ sharedStyles.replaceSync(
   }
   .accordion > .accordion-panel {
     background-color: var(--primary-color);
-    padding: 0 1rem;
     margin: 1rem;
     border-radius: 1rem;
     max-height: 0;
@@ -56,7 +55,9 @@ sharedStyles.replaceSync(
   }
   .accordion.active > .accordion-panel {
     max-height: auto;
-    padding: 1rem 1rem;
+  }
+  .accordion-panel-container {
+    padding: 1rem;
   }
 
   @keyframes accordion-active-arrow {
@@ -115,7 +116,9 @@ class Accordion extends HTMLElement {
         </svg>
       </button>
       <div class="accordion-panel">
-        <slot></slot>
+        <div class="accordion-panel-container">
+          <slot></slot>
+        </div>
       </div>
     </div>
     `;

@@ -159,18 +159,24 @@ aside {
   border-color: transparent var(--aside-color) transparent transparent;
 }
 
-.link.active,
-.link:hover {
+.link.active {
   box-shadow: 0 0 0.7rem black, 0 0 0.3rem white;
   border-radius: 50%;
 }
 
-.link:hover {
-  transform: translateY(-1px);
-}
+@media (hover: hover) {
+  .link:hover {
+    box-shadow: 0 0 0.7rem black, 0 0 0.3rem white;
+    border-radius: 50%;
+  }
 
-.link:hover .icon-text {
-  visibility: visible;
+  .link:hover {
+    transform: translateY(-1px);
+  }
+
+  .link:hover .icon-text {
+    visibility: visible;
+  }
 }
 
 .link a {

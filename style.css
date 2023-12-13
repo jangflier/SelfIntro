@@ -249,11 +249,7 @@ section > h2 {
 .logo {
   width: 10rem;
   height: 10rem;
-  transition: filter 0.3s ease-out;
-}
-
-.logo:hover {
-  filter: brightness(1.3);
+  transition: all 0.1s linear;
 }
 
 /* home */

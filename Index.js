@@ -148,3 +148,18 @@ navSideButton.addEventListener("click", (e) => {
   navSideButton.classList.toggle("active");
 });
 /* --- */
+
+/* hover effects */
+const logos = Array.from(document.getElementsByClassName("logo"));
+logos.forEach((logo) => {
+  logo.addEventListener("mousemove", (e) => {
+    const { width, height } = e.target.getBoundingClientRect();
+    logo.style = `transform: perspective(200px) rotateX(${Math.round(
+      (-40 / height) * e.offsetY + 20
+    )}deg) rotateY(${Math.round((40 / width) * e.offsetX - 20)}deg)`;
+  });
+  logo.addEventListener("mouseout", (e) => {
+    e.target.style = `transform: rotate(0)`;
+  });
+});
+/* --- */

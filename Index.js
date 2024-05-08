@@ -48,17 +48,17 @@ window.onload = async function () {
   introText[0].style.animation = "slideUp 1s ease-in-out";
 
   /* Animation */
-  const projectsTextElement = document.querySelector("#projects > article > .projects-text");
-  const projectsText = "coming soon".toUpperCase();
-  for (let i = 0; i < projectsText.length; i++) {
-    const divEl = document.createElement("span");
-    divEl.textContent = projectsText[i];
-    Object.assign(divEl.style, {
-      display: "inline-block",
-      animation: `1s wave ${i * 0.08}s ease-in-out infinite`,
-    });
-    projectsTextElement.appendChild(divEl);
-  }
+  // const projectsTextElement = document.querySelector("#projects > article > .projects-text");
+  // const projectsText = "coming soon".toUpperCase();
+  // for (let i = 0; i < projectsText.length; i++) {
+  //   const divEl = document.createElement("span");
+  //   divEl.textContent = projectsText[i];
+  //   Object.assign(divEl.style, {
+  //     display: "inline-block",
+  //     animation: `1s wave ${i * 0.08}s ease-in-out infinite`,
+  //   });
+  //   projectsTextElement.appendChild(divEl);
+  // }
 };
 /* --- */
 
@@ -70,6 +70,7 @@ const tabcontents = Array.from(document.getElementsByClassName("tabcontent"));
 const isFadeInOnce = {
   about: false,
   experience: false,
+  projects: false,
 };
 let transitioningTabContentName = "";
 let TransitioningWaitingTabContent = () => {};

@@ -96,6 +96,13 @@ const utils = {
       });
       changeTarget.isFadeInOnce.experience = true;
     }
+    if (!changeTarget.isFadeInOnce.projects && order === 3) {
+      // main > <section #projects>
+      Array.from(detectionTarget.querySelectorAll("modal-component")).forEach((el) => {
+        el.animateFadeIn();
+      });
+      changeTarget.isFadeInOnce.projects = true;
+    }
   },
 };
 

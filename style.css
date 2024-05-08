@@ -24,7 +24,7 @@ html {
 }
 
 ::-webkit-scrollbar {
-  width: 1rem;
+  width: 0.5rem;
 }
 
 ::-webkit-scrollbar-thumb {
@@ -432,7 +432,35 @@ td {
 }
 
 /* projects */
-#projects > article > div.projects-text {
+#projects > article {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+#projects > article > .modal-body > p {
+  margin: 1rem;
+}
+
+.project-link-container {
+  display: flex;
+  justify-content: center;
+}
+
+.project-link-container a {
+  background-color: var(--background-color);
+  padding: 0.5rem 1rem;
+  margin-top: 3rem;
+  border-radius: 1rem;
+  transition: all var(--modal-animation-delay) ease-in-out;
+}
+
+.project-link-container a:hover {
+  filter: brightness(1.2);
+}
+
+/* #projects > article > div.projects-text {
   white-space: pre-wrap;
   text-align: center;
   font-size: 4rem;
@@ -441,7 +469,7 @@ td {
 
 #projects > article > div.projects-text > * {
   color: var(--neutral-color);
-}
+} */
 
 /* contacts */
 #contact nav > ul > li {

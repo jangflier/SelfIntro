@@ -1,6 +1,6 @@
 "use strict";
-const sharedStyles = new CSSStyleSheet();
-sharedStyles.replaceSync(
+const accordionSharedStyles = new CSSStyleSheet();
+accordionSharedStyles.replaceSync(
   `
   :host {
     --accordion-animation-delay: 0.3s;
@@ -103,7 +103,7 @@ class Accordion extends HTMLElement {
     this.accordionIdCounter = Accordion.accordionIdCounter;
     this.accordionElement = null;
     const shadow = this.attachShadow({ mode: "open" });
-    this.shadowRoot.adoptedStyleSheets = [sharedStyles];
+    this.shadowRoot.adoptedStyleSheets = [accordionSharedStyles];
 
     shadow.innerHTML = `
     <style>

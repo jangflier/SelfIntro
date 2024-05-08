@@ -18,6 +18,7 @@
     />
     <script type="module" src="Index.js" defer></script>
     <script src="Components/Accordion.js" defer></script>
+    <script src="Components/Modal.js" defer></script>
     <title>YunseokJang's Self-Introduction</title>
   </head>
 
@@ -97,7 +98,7 @@
       </nav>
     </aside>
     <header></header>
-    <main>
+    <main id="main-container">
       <section id="home">
         <div class="content-container">
           <p class="intro-text">Nice to Meet You!</p>
@@ -109,12 +110,7 @@
         <h2>About Me<span>Attention to Details</span></h2>
         <article>
           <div class="about-profile">
-            <img
-              src="./asset/profile-photo.png"
-              class="profile-photo"
-              alt="My Profile Photo"
-              draggable="false"
-            />
+            <img src="asset/profile.webp" class="profile-photo" alt="My Profile Photo" draggable="false" />
             <div class="profile-text">
               <p>
                 I became deeply fascinated with software after initially engaging with tools like
@@ -325,7 +321,22 @@
       <section id="projects">
         <h2>Projects</h2>
         <article>
-          <div class="projects-text"></div>
+          <modal-component data-modal-title="TopBrainFrame">
+            <p>
+              The TopBrainFrame project is a web application that helps you set life goals and
+              supports you in planning and learning to achieve them.
+            </p>
+            <p>It is still in development and will be continuously updated.</p>
+            <div class="project-link-container">
+              <a
+                href="https://github.com/jangflier/TopBrainFrame"
+                aria-label="TopBrainFrame Project Link"
+                draggable="false"
+                >Open</a
+              >
+            </div>
+          </modal-component>
+          <!-- <div class="projects-text"></div> -->
         </article>
       </section>
       <section id="contact">
@@ -358,6 +369,17 @@
                     title="Linkedin"
                     draggable="false"
                   />
+                </a>
+              </li>
+              <li>
+                - Github -
+                <br />
+                <a
+                  href="https://github.com/jangflier?tab=repositories"
+                  aria-label="Github Link"
+                  draggable="false"
+                >
+                  <img class="logo" src="asset/github-logo.svg" title="Github" draggable="false" />
                 </a>
               </li>
             </ul>

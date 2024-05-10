@@ -443,23 +443,6 @@ td {
   margin: 1rem;
 }
 
-.project-link-container {
-  display: flex;
-  justify-content: center;
-}
-
-.project-link-container a {
-  background-color: var(--background-color);
-  padding: 0.5rem 1rem;
-  margin-top: 3rem;
-  border-radius: 1rem;
-  transition: all var(--modal-animation-delay) ease-in-out;
-}
-
-.project-link-container a:hover {
-  filter: brightness(1.2);
-}
-
 /* #projects > article > div.projects-text {
   white-space: pre-wrap;
   text-align: center;

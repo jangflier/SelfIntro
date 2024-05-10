@@ -33,13 +33,15 @@ modalSharedStyles.replaceSync(
     background: linear-gradient(to right, var(--neutral-color), tomato);
   }
   .modal {
-    z-index: 9999;
+    display: flex;
+    flex-direction: column;
     position: fixed;
+    gap: 2rem;
     top: 0;
     left: 0;
     width: 100vw;
     height: 100vh;
-    padding: 3rem 7rem;
+    padding: 3rem 5rem;
     visibility: hidden;
     opacity: 0;
     transform: scale(0);
@@ -47,6 +49,7 @@ modalSharedStyles.replaceSync(
       transform var(--modal-animation-delay) ease-in-out,
       opacity var(--modal-animation-delay) ease-in-out,
       visibility 0s var(--modal-animation-delay);
+    z-index: 9999;
   }
   .modal::before {
     content: "";
@@ -70,7 +73,6 @@ modalSharedStyles.replaceSync(
   .modal-header {
     display: flex;
     font-size: 5rem;
-    margin-bottom: 1rem;
     justify-content: space-between;
     align-items: center;
   }
@@ -93,11 +95,10 @@ modalSharedStyles.replaceSync(
     transform: translateY(calc(-5rem / 6)) rotate(-45deg);
   }
   .modal-body {
+    flex-grow: 1;
     width: 100%;
-    height: 80%;
     padding: 3rem;
     overflow-y: auto;
-    overflow-x: hidden;
     border-radius: 5rem;
     background: linear-gradient(to bottom, var(--neutral-color), tomato);
   }
@@ -111,6 +112,12 @@ modalSharedStyles.replaceSync(
   }
   .modal-body::-webkit-scrollbar-thumb:hover {
     background-color: var(--neutral-color);
+  }
+  .modal-footer {
+    font-size: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
   @keyframes slideDown {
     from {
@@ -155,6 +162,15 @@ class Modal extends HTMLElement {
       <div class="modal-body">
         <slot></slot>
       </div>
+      <div class="modal-footer">
+        <a
+          class="modal-link"
+          href=""
+          aria-label="Project Link"
+          draggable="false"
+          >Open</a
+        >
+      </div>
     </div>
     `;
   }
@@ -179,17 +195,24 @@ class Modal extends HTMLElement {
   }
 
   updateTemplate() {
-    const modalTitle1 = this.modalButtonElement.querySelector(".modal-title");
-    const modalTitle2 = this.modalElement.querySelector(".modal-title");
-    if (this.hasAttribute("data-modal-title") && modalTitle1 && modalTitle2) {
-      modalTitle1.innerText = this.getAttribute("data-modal-title");
-      modalTitle2.innerText = this.getAttribute("data-modal-title");
+    const modalButtonTitle = this.modalButtonElement.querySelector(".modal-title");
+    const modalTitle = this.modalElement.querySelector(".modal-title");
+    const modalLink = this.modalElement.querySelector(".modal-link");
+    if (
+      this.hasAttribute("data-modal-title") &&
+      this.hasAttribute("data-modal-link") &&
+      modalButtonTitle &&
+      modalTitle &&
+      modalLink
+    ) {
+      modalButtonTitle.innerText = this.getAttribute("data-modal-title");
+      modalTitle.innerText = this.getAttribute("data-modal-title");
+      modalLink.href = this.getAttribute("data-modal-link");
     }
   }
 
   openModal(e) {
     this.modalElement.classList.add("open");
-    document.getElementById("main-container").classList.add("body-no-scroll");
     const closeModalButtonElement = this.modalElement.querySelector("button.modal-close");
     if (closeModalButtonElement) {
       closeModalButtonElement.addEventListener("click", (e) => this.closeModal(e));
@@ -198,7 +221,6 @@ class Modal extends HTMLElement {
 
   closeModal(e) {
     this.modalElement.classList.remove("open");
-    document.body.classList.remove("body-no-scroll");
     const closeModalButtonElement = this.modalElement.querySelector("button.modal-close");
     if (closeModalButtonElement) {
       closeModalButtonElement.removeEventListener("click", this.closeModal);

@@ -71,6 +71,7 @@ const isFadeInOnce = {
   about: false,
   experience: false,
   projects: false,
+  contact: false,
 };
 let transitioningTabContentName = "";
 let TransitioningWaitingTabContent = () => {};

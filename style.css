@@ -457,6 +457,7 @@ td {
 /* contacts */
 #contact nav > ul > li {
   text-align: center;
+  opacity: 0;
 }
 
 #contact nav > ul > li:not(:first-child) {

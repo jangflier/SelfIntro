@@ -103,6 +103,16 @@ const utils = {
       });
       changeTarget.isFadeInOnce.projects = true;
     }
+    if (!changeTarget.isFadeInOnce.contact && order === 4) {
+      // main > <section #contact>
+      Array.from(detectionTarget.querySelectorAll("#contact > article > nav > ul > li")).forEach(
+        (el, i) =>
+          (el.style.animation = `1s ${i % 2 === 0 ? "slideRight" : "slideLeft"} ${
+            i * 0.5
+          }s ease-in-out forwards`)
+      );
+      changeTarget.isFadeInOnce.contact = true;
+    }
   },
 };
 

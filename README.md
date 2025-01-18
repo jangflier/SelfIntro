@@ -1,4 +1,4 @@
 # Yunseok - SelfIntro
-This repository houses my personal introduction page, meticulously built with pure HTML, CSS, and JavaScript without the use of any libraries.
+This repository contains my personal introduction page, carefully built using pure HTML, CSS, and JavaScript, with no libraries used.
 
 Access Link: https://jangflier.github.io/SelfIntro/

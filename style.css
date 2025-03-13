@@ -231,9 +231,9 @@ button {
   background-color: transparent;
 }
 
-main > section {
+/* main > section {
   min-height: 120vh;
-}
+} */
 
 section > article {
   padding: 10% 15%;
@@ -311,7 +311,7 @@ section > h2 {
 .about-profile {
   display: flex;
   flex-direction: row-reverse;
-  gap: 10%;
+  gap: 5%;
   align-items: center;
 }
 
@@ -326,6 +326,7 @@ section > h2 {
 }
 
 .profile-text > p {
+  font-size: 1.5rem;
   margin: 1rem;
   padding: 1rem;
   border-right: 1rem solid var(--neutral-color);
@@ -431,12 +432,21 @@ td {
   border-top: 3px solid var(--secondary-color);
 }
 
+.experience-task div:not(:first-child) {
+  margin-top: 2rem;
+}
+
+.experience-task p {
+  font-size: 1.5rem;
+  margin: 1rem;
+}
+
 /* projects */
 #projects > article {
   display: flex;
-  flex-direction: column;
   align-items: center;
-  gap: 1rem;
+  justify-content: space-around;
+  gap: 3rem;
 }
 
 #projects > article > .modal-body > p {
@@ -502,9 +512,9 @@ footer {
   }
 
   /* main common */
-  main > section {
+  /* main > section {
     min-height: 100vh;
-  }
+  } */
 
   /* about */
   .about-profile {

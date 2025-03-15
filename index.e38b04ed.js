@@ -140,38 +140,39 @@ class Modal extends HTMLElement {
         const shadow = this.attachShadow({
             mode: "open"
         });
-        const styleElement = document.createElement("style");
-        styleElement.textContent = modalSharedStyles.cssRules ? Array.from(modalSharedStyles.cssRules).map((rule)=>rule.cssText).join("") : "";
-        shadow.appendChild(styleElement);
+        this.shadowRoot.adoptedStyleSheets = [
+            modalSharedStyles
+        ];
         shadow.innerHTML = `
-      <div id="modal-button-${Modal.modalIdCounter}" class="modal-open-container">
-        <button type="button" class="modal-open">
-          <div class="modal-title">NULL</div>
+    <style>
+    </style>
+    <div id="modal-button-${Modal.modalIdCounter}" class="modal-open-container">
+      <button type="button" class="modal-open">
+        <div class="modal-title">NULL</div>
+      </button>
+    </div>
+    <div id="modal-${Modal.modalIdCounter}" class="modal">
+      <div class="modal-header">
+        <div class="modal-title">NULL</div>
+        <button type="button" class="modal-close">
+          <div class="modal-close-bar1"></div>
+          <div class="modal-close-bar2"></div>
         </button>
       </div>
-      <div id="modal-${Modal.modalIdCounter}" class="modal">
-        <div class="modal-header">
-          <div class="modal-title">NULL</div>
-          <button type="button" class="modal-close">
-            <div class="modal-close-bar1"></div>
-            <div class="modal-close-bar2"></div>
-          </button>
-        </div>
-        <div class="modal-body">
-          <slot></slot>
-        </div>
-        <div class="modal-footer">
-          <a
-            class="modal-link"
-            href=""
-            aria-label="Project Link"
-            draggable="false"
-            >Open</a
-          >
-        </div>
+      <div class="modal-body">
+        <slot></slot>
       </div>
+      <div class="modal-footer">
+        <a
+          class="modal-link"
+          href=""
+          aria-label="Project Link"
+          draggable="false"
+          >Open</a
+        >
+      </div>
+    </div>
     `;
-        shadow.prepend(styleElement);
     }
     connectedCallback() {
         this.modalElement = this.shadowRoot.querySelector(`#modal-${this.modalIdCounter}`);

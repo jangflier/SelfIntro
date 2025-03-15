@@ -52,9 +52,6 @@ accordionSharedStyles.replaceSync(`
     transform: translateY(5px);
     box-shadow: 0 2px var(--secondary-color);
   }
-  .accordion.active > .accordion-panel {
-    max-height: auto;
-  }
   .accordion-panel-container {
     padding: 1rem;
   }
@@ -102,9 +99,8 @@ class Accordion extends HTMLElement {
         const shadow = this.attachShadow({
             mode: "open"
         });
-        this.shadowRoot.adoptedStyleSheets = [
-            accordionSharedStyles
-        ];
+        const styleElement = document.createElement("style");
+        styleElement.textContent = accordionSharedStyles.cssRules ? Array.from(accordionSharedStyles.cssRules).map((rule)=>rule.cssText).join("") : "";
         shadow.innerHTML = `
     <style>
     </style>
@@ -122,6 +118,7 @@ class Accordion extends HTMLElement {
       </div>
     </div>
     `;
+        shadow.prepend(styleElement);
     }
     connectedCallback() {
         const accordionElement = this.shadowRoot.querySelector(`#accordion-${Accordion.accordionIdCounter}`);

@@ -102,8 +102,6 @@ class Accordion extends HTMLElement {
         const styleElement = document.createElement("style");
         styleElement.textContent = accordionSharedStyles.cssRules ? Array.from(accordionSharedStyles.cssRules).map((rule)=>rule.cssText).join("") : "";
         shadow.innerHTML = `
-    <style>
-    </style>
     <div id="accordion-${Accordion.accordionIdCounter}" class="accordion">
       <button type="button">
         <div class="accordion-title">NULL</div>

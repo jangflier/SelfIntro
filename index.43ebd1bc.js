@@ -1,6 +1,4 @@
-"use strict";
-const modalSharedStyles = new CSSStyleSheet();
-modalSharedStyles.replaceSync(`
+const t=new CSSStyleSheet;t.replaceSync(`
   :host {
     --modal-animation-delay: 0.3s;
   }
@@ -128,28 +126,13 @@ modalSharedStyles.replaceSync(`
       opacity: 1;
     }
   }
-  `);
-class Modal extends HTMLElement {
-    static modalIdCounter = 0;
-    constructor(){
-        super();
-        Modal.modalIdCounter += 1;
-        this.modalIdCounter = Modal.modalIdCounter;
-        this.modalElement = null;
-        this.modalButtonElement = null;
-        const shadow = this.attachShadow({
-            mode: "open"
-        });
-        const styleElement = document.createElement("style");
-        styleElement.textContent = modalSharedStyles.cssRules ? Array.from(modalSharedStyles.cssRules).map((rule)=>rule.cssText).join("") : "";
-        shadow.appendChild(styleElement);
-        shadow.innerHTML = `
-      <div id="modal-button-${Modal.modalIdCounter}" class="modal-open-container">
+  `);class e extends HTMLElement{static modalIdCounter=0;constructor(){super(),e.modalIdCounter+=1,this.modalIdCounter=e.modalIdCounter,this.modalElement=null,this.modalButtonElement=null;let o=this.attachShadow({mode:"open"}),a=document.createElement("style");a.textContent=t.cssRules?Array.from(t.cssRules).map(t=>t.cssText).join(""):"",o.appendChild(a),o.innerHTML=`
+      <div id="modal-button-${e.modalIdCounter}" class="modal-open-container">
         <button type="button" class="modal-open">
           <div class="modal-title">NULL</div>
         </button>
       </div>
-      <div id="modal-${Modal.modalIdCounter}" class="modal">
+      <div id="modal-${e.modalIdCounter}" class="modal">
         <div class="modal-header">
           <div class="modal-title">NULL</div>
           <button type="button" class="modal-close">
@@ -170,44 +153,5 @@ class Modal extends HTMLElement {
           >
         </div>
       </div>
-    `;
-        shadow.prepend(styleElement);
-    }
-    connectedCallback() {
-        this.modalElement = this.shadowRoot.querySelector(`#modal-${this.modalIdCounter}`);
-        this.modalButtonElement = this.shadowRoot.querySelector(`#modal-button-${this.modalIdCounter}`);
-        const openModalButtonElement = this.modalButtonElement.querySelector("button.modal-open");
-        if (openModalButtonElement) openModalButtonElement.addEventListener("click", (e)=>this.openModal(e));
-        this.updateTemplate();
-    }
-    disconnectedCallback() {
-        const modalButtonElement = this.modalElement.querySelector("button");
-        if (modalButtonElement) modalButtonElement.removeEventListener("click", this.openModal);
-    }
-    updateTemplate() {
-        const modalButtonTitle = this.modalButtonElement.querySelector(".modal-title");
-        const modalTitle = this.modalElement.querySelector(".modal-title");
-        const modalLink = this.modalElement.querySelector(".modal-link");
-        if (this.hasAttribute("data-modal-title") && this.hasAttribute("data-modal-link") && modalButtonTitle && modalTitle && modalLink) {
-            modalButtonTitle.innerText = this.getAttribute("data-modal-title");
-            modalTitle.innerText = this.getAttribute("data-modal-title");
-            modalLink.href = this.getAttribute("data-modal-link");
-        }
-    }
-    openModal(e) {
-        this.modalElement.classList.add("open");
-        const closeModalButtonElement = this.modalElement.querySelector("button.modal-close");
-        if (closeModalButtonElement) closeModalButtonElement.addEventListener("click", (e)=>this.closeModal(e));
-    }
-    closeModal(e) {
-        this.modalElement.classList.remove("open");
-        const closeModalButtonElement = this.modalElement.querySelector("button.modal-close");
-        if (closeModalButtonElement) closeModalButtonElement.removeEventListener("click", this.closeModal);
-    }
-    animateFadeIn() {
-        if (this.modalButtonElement) this.modalButtonElement.style.animation = `1s slideDown ${(this.modalIdCounter - 1) * 0.3}s ease-in-out forwards`;
-    }
-}
-customElements.define("modal-component", Modal);
-
-//# sourceMappingURL=index.e38b04ed.js.map
+    `,o.prepend(a)}connectedCallback(){this.modalElement=this.shadowRoot.querySelector(`#modal-${this.modalIdCounter}`),this.modalButtonElement=this.shadowRoot.querySelector(`#modal-button-${this.modalIdCounter}`);let t=this.modalButtonElement.querySelector("button.modal-open");t&&t.addEventListener("click",t=>this.openModal(t)),this.updateTemplate()}disconnectedCallback(){let t=this.modalElement.querySelector("button");t&&t.removeEventListener("click",this.openModal)}updateTemplate(){let t=this.modalButtonElement.querySelector(".modal-title"),e=this.modalElement.querySelector(".modal-title"),o=this.modalElement.querySelector(".modal-link");this.hasAttribute("data-modal-title")&&this.hasAttribute("data-modal-link")&&t&&e&&o&&(t.innerText=this.getAttribute("data-modal-title"),e.innerText=this.getAttribute("data-modal-title"),o.href=this.getAttribute("data-modal-link"))}openModal(t){this.modalElement.classList.add("open");let e=this.modalElement.querySelector("button.modal-close");e&&e.addEventListener("click",t=>this.closeModal(t))}closeModal(t){this.modalElement.classList.remove("open");let e=this.modalElement.querySelector("button.modal-close");e&&e.removeEventListener("click",this.closeModal)}animateFadeIn(){this.modalButtonElement&&(this.modalButtonElement.style.animation=`1s slideDown ${(this.modalIdCounter-1)*.3}s ease-in-out forwards`)}}customElements.define("modal-component",e);
+//# sourceMappingURL=index.43ebd1bc.js.map

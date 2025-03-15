@@ -577,6 +577,14 @@ footer {
   .icon-text {
     display: none;
   }
+
+  .profile-text > p {
+    font-size: 1.75rem;
+  }
+
+  .experience-task p {
+    font-size: 1.75rem;
+  }
 }
 
 @media only screen and (max-width: 480px) and (orientation: portrait),
